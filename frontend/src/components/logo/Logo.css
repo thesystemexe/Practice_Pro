@@ -1,0 +1,54 @@
+.navbar-logo {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #FFD700; /* Gold for "Aura" */
+  font-family: 'Cinzel Decorative', cursive;
+  white-space: nowrap;
+}
+
+/* Styling "Aura" */
+.navbar-logo .aura {
+  position: relative;
+}
+
+/* Styling "Kaze" */
+.navbar-logo .kaze {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translateY(25%) rotate(-45deg);
+  font-size: 1rem;
+  color: #00FFFF;
+  text-shadow: 0 0 10px #00FFFF, 0 0 15px #00FFCC;
+}
+
+/* Butterfly Animation */
+.butterfly {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50px;
+  height: auto;
+  animation: fly-around 6s infinite;
+}
+
+@keyframes fly-around {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  25% {
+    transform: translate(50px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(0px, 50px) scale(1);
+  }
+  75% {
+    transform: translate(-50px, -50px) scale(0.9);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

@@ -1,0 +1,170 @@
+
+.productdisplay {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+  /* background: #f9f9f9; */
+  border-radius: 10px;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+  margin: 20px;
+}
+
+.productdisplay-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productdisplay-img-list {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.productdisplay-img-list img {
+  width: 80px;
+  height: 87px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.productdisplay-img-list img:hover {
+  transform: scale(1.1);
+  border-color: #000;
+}
+
+.productdisplay-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productdisplay-main-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 50px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.productdisplay-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.productdisplay-right h1 {
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.productdisplay-right-star {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.productdisplay-right-star img {
+  width: 20px;
+  height: 20px;
+}
+
+.productdisplay-right-star p {
+  color: #666;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.productdisplay-right-prices {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}
+
+.productdisplay-right-price-old {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 18px;
+}
+
+.productdisplay-right-price-new {
+  font-size: 24px;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.productdisplay-right-description {
+  color: #555;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.productdisplay-right-size {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.productdisplay-right-size h1 {
+  font-size: 18px;
+  color: #333;
+}
+
+.productdisplay-right-size div {
+  display: flex;
+  gap: 10px;
+}
+
+.productdisplay-right-size div div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.productdisplay-right-size div div:hover {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #fff;
+}
+
+button {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #c0392b;
+}
+
+.productdisplay-right-category {
+  color: #555;
+  font-size: 14px;
+}
+
+.productdisplay-right-category span {
+  font-weight: bold;
+  color: #333;
+}
