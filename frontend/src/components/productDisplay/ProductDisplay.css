@@ -110,14 +110,16 @@
 }
 
 .productdisplay-right-size {
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   gap: 10px;
 }
 
 .productdisplay-right-size h1 {
   font-size: 18px;
   color: #333;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .productdisplay-right-size div {
@@ -143,17 +145,20 @@
   color: #fff;
 }
 
-button {
+.productdisplay-right button{
+  width: 30%;
   background-color: #e74c3c;
   color: #fff;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 17px 24px;
+  font-size: 15px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+
 }
+
 
 button:hover {
   background-color: #c0392b;
