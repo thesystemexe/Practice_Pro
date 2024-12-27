@@ -159,7 +159,7 @@ app.post("/signup", async (req, res) => {
   }
 
   let cart = {};
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 300; i++) {
     cart[i] = 0;
   }
   const user = new Users({
@@ -246,13 +246,37 @@ const fetchUser = async (req, resp, next) => {
 //Creating end points for adding products in cartdata
 
 app.post("/addtocart", fetchUser, async (req, resp) => {
+  console.log("added", req.body.itemId);
   console.log(req.body, req.user);
-
-  // let userData = await Users.find({_id:req.user.id});
-  // userData.cartData[req.body.itemId]+=1;
-  // await Users.findOneAndUpdate({_id:req.user.id},{cartData:userData.cartData});
-  // resp.send("Added");
+  let userData = await Users.findOne({_id:req.user.id});
+    userData.cartData[req.body.itemId]+=1;
+  await Users.findOneAndUpdate(
+    {_id:req.user.id},
+    { cartData:userData.cartData}
+  );
+  resp.send("Added");
 });
+
+//Creating endpoint to remove product from cartData
+app.post("/removefromcart", fetchUser, async (req, resp) => {
+  console.log("removed",req.body.itemId);
+  let userData = await Users.findOne({ _id:req.user.id});
+  if (userData.cartData[req.body.itemId] > 0) 
+    userData.cartData[req.body.itemId] -= 1;
+  await Users.findOneAndUpdate(
+    {_id:req.user.id},
+    {cartData:userData.cartData}
+  );
+  resp.send("Removed");
+});
+
+// Creating end point to get cart data
+
+app.post('/getcart',fetchUser, async(req,resp)=>{
+  console.log('get cart');
+  let userData = await Users.findOne({_id:req.user.id});
+  resp.json(userData.cartData);
+})
 
 app.listen(port, (error) => {
   if (!error) {
